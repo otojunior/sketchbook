@@ -38,7 +38,7 @@ namespace otojunior {
    * Turns off the led.
    */
   void Led::off() {
-    digitalWrite(this->_pin, HIGH);
+    digitalWrite(this->_pin, LOW);
   }
 
   /**
