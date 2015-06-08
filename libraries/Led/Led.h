@@ -16,37 +16,38 @@
 #ifndef LED_H_
 #define LED_H_
 
-/**
- * Represents a Led component.
- */
-class Led {
-	private:
-		/**
-		 * The pin where the led is plugged on.
-		 */
-		int _pin;
-	public:
-		/**
-		 * Default constructor. Creates a Led object.
-		 * @param pin: the pin where the led is plugged.
-		 */
-		Led(int);
-		
-		/**
-		 * Turns on the led.
-		 */
-		void on();
-		
-		/**
-		 * Turns off the led.
-		 */
-		void off();
-		
-		/**
-		 * Blink the led.
-		 * @param int miliseconds: the blink rate in ms.
-		 */
-		void blink(int);
-};	
-
+namespace otojunior {
+  /**
+   * Represents a Led component.
+   */
+  class Led {
+    private:
+      /**
+       * The pin where the led is plugged on.
+       */
+      int _pin;
+    public:
+      /**
+       * Default constructor. Creates a Led object.
+       * @param pin: the pin where the led is plugged.
+       */
+      Led(int);
+      
+      /**
+       * Turns on the led.
+       */
+      void on();
+      
+      /**
+       * Turns off the led.
+       */
+      void off();
+      
+      /**
+       * Blink the led.
+       * @param int miliseconds: the blink rate in ms.
+       */
+      void blink(int);
+  };  
+}
 #endif

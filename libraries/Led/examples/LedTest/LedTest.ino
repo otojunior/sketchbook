@@ -18,18 +18,20 @@
 // Pre-compilation constant definition to represent delay time (in ms.)
 #define DELAY_TIME 500
 
+using namespace otojunior;
+
 // Led object plugged into pin 13
 Led theLed(13);
 
 // Initial config function
 void setup() {
-	// (No initial config needed in this simple example).
+  // (No initial config needed in this simple example).
 }
 
 // Loop function
 void loop() {
-	theLed.on();
-	delay(DELAY_TIME);
-	theLed.off();
-	delay(DELAY_TIME);
+  theLed.on();
+  delay(DELAY_TIME);
+  theLed.off();
+  delay(DELAY_TIME);
 }

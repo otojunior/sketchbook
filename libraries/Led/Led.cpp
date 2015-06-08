@@ -16,37 +16,39 @@
 #include "Arduino.h"
 #include "Led.h"
 
-/**
- * Default constructor. Creates a Led object.
- * @param pin: the pin where the led is plugged.
- */
-Led::Led(int pin) {
-	_pin = pin;
-	pinMode(_pin, OUTPUT);
-	digitalWrite(_pin, LOW);
-}
+namespace otojunior {
+  /**
+   * Default constructor. Creates a Led object.
+   * @param pin: the pin where the led is plugged.
+   */
+  Led::Led(int pin) {
+    this->_pin = pin;
+    pinMode(this->_pin, OUTPUT);
+    digitalWrite(this->_pin, LOW);
+  }
 
-/**
- * Turns on the led.
- */
-void Led::on() {
-	digitalWrite(_pin, HIGH);
-}
+  /**
+   * Turns on the led.
+   */
+  void Led::on() {
+    digitalWrite(this->_pin, HIGH);
+  }
 
-/**
- * Turns off the led.
- */
-void Led::off() {
-	digitalWrite(_pin, HIGH);
-}
+  /**
+   * Turns off the led.
+   */
+  void Led::off() {
+    digitalWrite(this->_pin, HIGH);
+  }
 
-/**
- * Blink the led.
- * @param int miliseconds: the blink rate in ms.
- */
-void Led::blink(int miliseconds) {
-	digitalWrite(_pin, HIGH);
-	delay(miliseconds);
-	digitalWrite(_pin, LOW);
-	delay(miliseconds);
+  /**
+   * Blink the led.
+   * @param int miliseconds: the blink rate in ms.
+   */
+  void Led::blink(int miliseconds) {
+    digitalWrite(this->_pin, HIGH);
+    delay(miliseconds);
+    digitalWrite(this->_pin, LOW);
+    delay(miliseconds);
+  }
 }
