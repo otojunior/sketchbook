@@ -13,20 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include "Arduino.h"
-#include "Led.h"
+#include <Led.h>
+#include <Arduino.h>
 
 namespace otojunior {
+  /**
+   * Default constructor. Creates a Led object
+   * with no pin definition.
+   */
+  Led::Led(void) {
+  }
+  
   /**
    * Default constructor. Creates a Led object.
    * @param pin: the pin where the led is plugged.
    */
   Led::Led(int pin) {
+    this->set(pin);
+  }
+  
+  /**
+   * sets (define) the pin for the led.
+   * @param pin: Pin where plugged the led.
+   */
+  void Led::set(int pin) {
     this->_pin = pin;
     pinMode(this->_pin, OUTPUT);
     digitalWrite(this->_pin, LOW);
   }
-
+  
   /**
    * Turns on the led.
    */
@@ -39,16 +54,5 @@ namespace otojunior {
    */
   void Led::off() {
     digitalWrite(this->_pin, LOW);
-  }
-
-  /**
-   * Blink the led.
-   * @param int miliseconds: the blink rate in ms.
-   */
-  void Led::blink(int miliseconds) {
-    digitalWrite(this->_pin, HIGH);
-    delay(miliseconds);
-    digitalWrite(this->_pin, LOW);
-    delay(miliseconds);
   }
 }

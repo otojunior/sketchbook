@@ -28,26 +28,32 @@ namespace otojunior {
       int _pin;
     public:
       /**
+       * Default constructor. Creates a Led object
+       * with no pin definition.
+       */
+      Led(void);
+      
+      /**
        * Default constructor. Creates a Led object.
        * @param pin: the pin where the led is plugged.
        */
       Led(int);
       
       /**
+       * sets (define) the pin for the led.
+       * @param pin: Pin where plugged the led.
+       */
+      void set(int);
+      
+      /**
        * Turns on the led.
        */
-      void on();
+      void on(void);
       
       /**
        * Turns off the led.
        */
-      void off();
-      
-      /**
-       * Blink the led.
-       * @param int miliseconds: the blink rate in ms.
-       */
-      void blink(int);
+      void off(void);
   };  
 }
 #endif
