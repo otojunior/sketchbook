@@ -1,0 +1,24 @@
+<VBBSolution name="vbb_cycleleds">
+	<LAYOUT currentView="0" >
+	<VIEW id="1">
+		<PANE>[vbb_cycleleds]ArduinoBBLed13-SIM.VBB</PANE>
+	</VIEW>
+	<VIEW id="2">
+		<PANE>[vbb_cycleleds]ArduinoBBLed13-SIM.VBB</PANE>
+	</VIEW>
+	<VIEW id="3">
+		<PANE>[vbb_cycleleds]ArduinoBBLed13-SIM.VBB</PANE>
+	</VIEW>
+	</LAYOUT>
+<PROJECTS>
+<PROJECT>vbb_cycleleds.SIM</PROJECT>
+<REFERENCES>
+<VBB-EXCLUDES>
+</VBB-EXCLUDES>
+<USER-INCLUDES>
+</USER-INCLUDES>
+<WEB-INCLUDES>
+</WEB-INCLUDES>
+</REFERENCES>
+</PROJECTS>
+</VBBSolution>
