@@ -1,5 +1,5 @@
-#ifndef INOBASE_H_
-#define INOBASE_H_
+#ifndef SIMULATOR_H_
+#define SIMULATOR_H_
 
 #include "ArduinoMock.h"
 

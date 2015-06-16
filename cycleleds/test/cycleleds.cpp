@@ -19,12 +19,13 @@
  * Description: Cycles a pre-defined series of leds to forward or backward 
  * direction in determined delay time between leds.
  */
-
-#include <inobase.h>
-
+#ifdef SIMULATOR
+    #include <Simulator.h> 
+#endif
+ 
 // Constants
 const int LEDS_QUANTITY = 5;
-const int DELAY_TIME = 1000;
+const int DELAY_TIME = 500;
 const int FIRST_PIN = 13;
 const bool BACK_CYCLE_DIRECTION = true;
 
@@ -40,7 +41,9 @@ void onlyLedOn(int ledIndex) {
         digitalWrite(leds[i], LOW);
     digitalWrite(leds[ledIndex], HIGH);
     
-    mock.debug(leds[ledIndex]);
+    #ifdef SIMULATOR
+        mock.debug(leds[ledIndex]);
+    #endif
 }
 
 /**
@@ -73,8 +76,10 @@ void loop() {
     }
 }
 
-int main() {
-    setup();
-    while (1) loop();
-    return 0;
-}
+#ifdef SIMULATOR
+    int main() {
+        setup();
+        while (1) loop();
+        return 0;
+    }
+#endif

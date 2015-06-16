@@ -11,10 +11,11 @@ CC = g++
 FLAGS = -O2
 INCLUDE = ../../mock
 SOURCES = $(INCLUDE)/*.cpp *.cpp
-EXECUTABLE = cycleleds_test
+EXECUTABLE = cycleleds
 
-all:
-	$(CC) $(FLAGS) -o $(EXECUTABLE) -I $(INCLUDE) $(SOURCES)
+simulate:
+	cp ../$(EXECUTABLE).ino ./$(EXECUTABLE).cpp
+	$(CC) -D SIMULATOR $(FLAGS) -o $(EXECUTABLE) -I $(INCLUDE) $(SOURCES)
 
 clean:
-    rm -f *.exe
+	rm -f *.exe

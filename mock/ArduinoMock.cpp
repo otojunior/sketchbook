@@ -3,7 +3,7 @@
 #include <iostream>
 
 ArduinoMock::ArduinoMock() {
-    for (int i = 0; i < NUMBER_PINS; i++) {
+    for (int i = 0; i < ARDUINOMOCK_NUMBER_PINS; i++) {
         _pins[i].init(i);
     }
 }

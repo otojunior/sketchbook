@@ -19,7 +19,10 @@
  * Description: Cycles a pre-defined series of leds to forward or backward 
  * direction in determined delay time between leds.
  */
-
+#ifdef SIMULATOR
+    #include <Simulator.h> 
+#endif
+ 
 // Constants
 const int LEDS_QUANTITY = 5;
 const int DELAY_TIME = 500;
@@ -28,6 +31,20 @@ const bool BACK_CYCLE_DIRECTION = true;
 
 // variables (components)
 int leds[LEDS_QUANTITY];
+
+/**
+ * Turns on only one led.
+ * @param ledIndex: Led index.
+ */
+void onlyLedOn(int ledIndex) {
+    for (int i = 0; i < LEDS_QUANTITY; i++)
+        digitalWrite(leds[i], LOW);
+    digitalWrite(leds[ledIndex], HIGH);
+    
+    #ifdef SIMULATOR
+        mock.debug(leds[ledIndex]);
+    #endif
+}
 
 /**
  * Default Arduino setup function.
@@ -59,12 +76,10 @@ void loop() {
     }
 }
 
-/**
- * Turns on only one led.
- * @param ledIndex: Led index.
- */
-void onlyLedOn(int ledIndex) {
-    for (int i = 0; i < LEDS_QUANTITY; i++)
-        digitalWrite(leds[i], LOW);
-    digitalWrite(leds[ledIndex], HIGH);
-}
+#ifdef SIMULATOR
+    int main() {
+        setup();
+        while (1) loop();
+        return 0;
+    }
+#endif

@@ -14,4 +14,5 @@ all:
 	$(CC) $(FLAGS) -c $(SOURCES)
     
 clean:
-    rm -f *.o
+	rm -f *.o
+	rm -f *.gch

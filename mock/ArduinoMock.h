@@ -3,14 +3,14 @@
 
 #include "Pin.h"
 
-#define NUMBER_PINS 14
-
 #define HIGH    1
 #define LOW     0
 
+const int ARDUINOMOCK_NUMBER_PINS = 14;
+
 class ArduinoMock {
     private:
-       Pin _pins[NUMBER_PINS];
+       Pin _pins[ARDUINOMOCK_NUMBER_PINS];
     public:
         ArduinoMock();
         void pinMode(int, int);
